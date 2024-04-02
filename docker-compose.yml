@@ -1,12 +1,22 @@
-﻿services:
-  server.app:
-    image: server.app
-    build:
-      context: .
-      dockerfile: Src/Server.App/Dockerfile
+﻿version: '3'
 
-  client.app:
-    image: client.app
-    build:
-      context: .
-      dockerfile: Src/Client.App/Dockerfile
+services:
+  server:
+    container_name: server_container
+    build: ./Src/Server.App
+    ports:
+      - "50051:50051"
+    stdin_open: true
+    tty: true
+    environment:
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=50051
+  
+  
+  client:
+    container_name: client_container
+    build: ./Src/Client.App
+    depends_on:
+      - server
+    environment:
+      - SERVER_ADDRESS=server_container:50051
