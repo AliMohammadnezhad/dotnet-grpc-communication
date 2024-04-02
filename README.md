@@ -46,13 +46,13 @@ Open two terminal/command prompt windows.
 In one terminal window, attach to the server container by running the following command:
 
 ```bash
-docker attach server_Container
+docker attach server_container
 ```
 
 In the other terminal window, attach to the client container by running the following command:
 
 ```bash
-docker attach Client_Container
+docker attach client_container
 ```
 
 Now, you can interact with the application:
