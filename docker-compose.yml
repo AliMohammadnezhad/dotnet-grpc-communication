@@ -1,0 +1,6 @@
+﻿services:
+  server.app:
+    image: server.app
+    build:
+      context: .
+      dockerfile: Src/Server.App/Dockerfile
