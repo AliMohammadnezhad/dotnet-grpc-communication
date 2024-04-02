@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+service StreamService {
+  rpc StreamCharacters(google.protobuf.Empty) returns (stream CharacterResponse);
+
+}
+
+message CharacterResponse {
+  string Character = 1;
+}
+
