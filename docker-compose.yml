@@ -4,3 +4,9 @@
     build:
       context: .
       dockerfile: Src/Server.App/Dockerfile
+
+  client.app:
+    image: client.app
+    build:
+      context: .
+      dockerfile: Src/Client.App/Dockerfile
