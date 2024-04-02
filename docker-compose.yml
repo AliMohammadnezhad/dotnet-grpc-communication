@@ -1,4 +1,4 @@
-﻿version: '3'
+﻿version: '3.8'
 
 services:
   server:
@@ -20,3 +20,5 @@ services:
       - server
     environment:
       - SERVER_ADDRESS=server_container:50051
+    stdin_open: true
+    tty: true
